@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     private Animation thisAnimation;
 
     Rigidbody PlayerRB;
+
+    public Text scoreText;
 
     void Start()
     {
@@ -28,7 +31,7 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene("GameOver");
         }
 
-        else if (transform.position.y > 3.5f)
+        else if (transform.position.y > 4)
         {
             transform.position = new Vector3(transform.position.x, 4, transform.position.z);
         }
@@ -37,9 +40,19 @@ public class Player : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "obstacle")
+        if (collision.gameObject.tag == "Obstacle")
         {
             SceneManager.LoadScene("GameOver");
         }
     }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Score")
+        {
+            GameManager.Score++;
+            scoreText.GetComponent<Text>().text = "SCORE: " + GameManager.Score;
+        }
+    }
+
 }
