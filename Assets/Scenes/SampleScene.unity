@@ -363,6 +363,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AngryDuck
       objectReference: {fileID: 0}
+    - target: {fileID: 9128773495855167462, guid: fa616eb311850a54498fbc4920bda0fa,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa616eb311850a54498fbc4920bda0fa, type: 3}
 --- !u!1001 &2034328365
@@ -504,7 +509,7 @@ PrefabInstance:
     - target: {fileID: 5140303659050033032, guid: cb5c1cfd365a4634885214c81e06a60f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 5140303659050033032, guid: cb5c1cfd365a4634885214c81e06a60f,
         type: 3}
